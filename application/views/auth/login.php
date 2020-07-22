@@ -16,6 +16,9 @@
 								<input name="remember" type="checkbox" value="Remember Me">Remember Me
 							</label>
 						</div>
+						<a href="<?= base_url('auth/register'); ?>">Daftar admin baru</a>
+						<br>
+						<br>
 						<a href="index.html" class="btn btn-primary">Login</a>
 					</fieldset>
 				</form>
