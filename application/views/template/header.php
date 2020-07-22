@@ -4,10 +4,10 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Lumino - Dashboard</title>
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-	<link href="assets/css/font-awesome.min.css" rel="stylesheet">
-	<link href="assets/css/datepicker3.css" rel="stylesheet">
-	<link href="assets/css/styles.css" rel="stylesheet">
+	<link href="<?= base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
+	<link href="<?= base_url('assets/css/font-awesome.min.css'); ?>" rel="stylesheet">
+	<link href="<?= base_url('assets/css/datepicker3.css'); ?>" rel="stylesheet">
+	<link href="<?= base_url('assets/css/styles.css'); ?>" rel="stylesheet">
 	
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -32,7 +32,7 @@
 						<ul class="dropdown-menu dropdown-messages">
 							<li>
 								<div class="dropdown-messages-box"><a href="profile.html" class="pull-left">
-									<img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
+									<img alt="image" class="img-circle" src="<?= base_url('http://placehold.it/40/30a5ff/fff'); ?>">
 									</a>
 									<div class="message-body"><small class="pull-right">3 mins ago</small>
 										<a href="#"><strong>John Doe</strong> commented on <strong>your photo</strong>.</a>
@@ -42,7 +42,7 @@
 							<li class="divider"></li>
 							<li>
 								<div class="dropdown-messages-box"><a href="profile.html" class="pull-left">
-									<img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
+									<img alt="image" class="img-circle" src="<?= base_url('http://placehold.it/40/30a5ff/fff'); ?>">
 									</a>
 									<div class="message-body"><small class="pull-right">1 hour ago</small>
 										<a href="#">New message from <strong>Jane Doe</strong>.</a>
