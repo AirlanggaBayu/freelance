@@ -4,7 +4,7 @@ class crud extends CI_Model{
 
     #fungsi ini untuk menampilkan data
     function tampil_data($table){
-        $this->db->get($table);
+        return $this->db->get($table);
     }
 
     #fungsi ini untuk tambah data
