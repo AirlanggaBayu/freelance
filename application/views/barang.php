@@ -13,3 +13,4 @@
 				<h1 class="page-header">Data Barang</h1>
 			</div>
 		</div><!--/.row-->
+		
