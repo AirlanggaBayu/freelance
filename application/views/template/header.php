@@ -8,6 +8,7 @@
 	<link href="<?= base_url('assets/css/font-awesome.min.css'); ?>" rel="stylesheet">
 	<link href="<?= base_url('assets/css/datepicker3.css'); ?>" rel="stylesheet">
 	<link href="<?= base_url('assets/css/styles.css'); ?>" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/6b0af4bcb3.js" crossorigin="anonymous"></script>
 	
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
