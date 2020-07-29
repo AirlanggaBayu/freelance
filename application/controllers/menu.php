@@ -28,7 +28,7 @@ class Menu extends CI_Controller{
         
         if($this->form_validation->run() == false)
         {
-            $this->load->view('template/header');
+            $this->load->view('template/header', $data);
             $this->load->view('menu', $data);
             $this->load->view('template/sidebar');
             $this->load->view('template/footer');
@@ -83,7 +83,7 @@ class Menu extends CI_Controller{
         
         if($this->form_validation->run() == false)
         {
-            $this->load->view('template/header');
+            $this->load->view('template/header', $data);
             $this->load->view('menu', $data);
             $this->load->view('template/sidebar');
             $this->load->view('template/footer');
@@ -162,7 +162,7 @@ class Menu extends CI_Controller{
         
         if($this->form_validation->run() == false)
         {
-            $this->load->view('template/header');
+            $this->load->view('template/header', $data);
             $this->load->view('submenu', $data);
             $this->load->view('template/sidebar');
             $this->load->view('template/footer');
@@ -220,7 +220,7 @@ class Menu extends CI_Controller{
         
         if($this->form_validation->run() == false)
         {
-            $this->load->view('template/header');
+            $this->load->view('template/header', $data);
             $this->load->view('submenu', $data);
             $this->load->view('template/sidebar');
             $this->load->view('template/footer');
