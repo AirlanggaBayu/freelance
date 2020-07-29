@@ -7,80 +7,91 @@
             <li class="active"><?= $title; ?></li>
         </ol>
     </div>
-    <!--/.row-->
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title"><?= $title; ?></h3>
-        </div>
-
-        <!-- Button Add Data -->
+    <!-- /.row -->
+    <!-- /.card-header -->
+    <div class="panel panel-container">
         <div class="row">
-            <div class="col-lg-12">
-                <button class="btn btn-info" data-toggle="modal" data-target="#addmodal">Add Data</button>
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <?= $title; ?>
+                        <!-- Button Add Data -->
+                        <ul class="pull-right panel-settings panel-button-tab-right">
+                            <li class="dropdown"><a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <em class="fa fa-cogs"></em>
+                                </a>
+                            </li>
+                        </ul>
+                        <span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span>
+                    </div>
+                    <div class="panel-body">
+                        <?= $this->session->flashdata('message'); ?>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <button class="btn btn-info" data-toggle="modal" data-target="#addmodal">Add Data</button>
+                            </div>
+                        </div>
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">No</th>
+                                    <th class="text-center">Menu</th>
+                                    <th class="text-center">Icon</th>
+                                    <th class="text-center">Url</th>
+                                    <th class="text-center">Status</th>
+                                    <th class="text-center">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $i = 1; ?>
+                                <?php foreach ($menu as $m) :
+                                    $id = $m['id_menu'];
+                                ?>
+                                    <tr>
+                                        <td class="text-center"><?= $i; ?></td>
+                                        <td><?= $m['menu']; ?></td>
+                                        <td class="text-center"><em class="<?= $m['icon']; ?>">&nbsp;</em></td>
+                                        <td><?= $m['url']; ?></td>
+                                        <?php if ($m['is_active'] == 1) { ?>
+                                            <td class="text-center"> <span class="badge bg-green">active</span></td>
+                                        <?php } else { ?>
+                                            <td class="text-center"> <span class="badge bg-secondary">disable</span></td>
+                                        <?php } ?>
+                                        <td class="text-center">
+                                            <button class="btn btn-info" data-toggle="modal" data-target="#modaledit<?= $m['id_menu']; ?>">Edit</button>
+                                            <?php if ($m['id_menu'] == 1 || $m['id_menu'] == 2 || $m['id_menu'] == 4) { ?>
+                                                <button class="btn btn-danger" data-toggle="modal" data-target="#modalhapus<?= $m['id_menu']; ?>" disabled>Hapus</button>
+                                            <?php } else { ?>
+                                                <button class="btn btn-danger" data-toggle="modal" data-target="#modalhapus<?= $m['id_menu']; ?>">Hapus</button>
+                                            <?php } ?>
+                                            <?php if ($m['is_active'] != 1) { ?>
+                                                <a href="<?= base_url('menu/active/' . $id); ?>" class="btn btn-success">Activate</a>
+                                            <?php } else { ?>
+                                                <?php if ($m['id_menu'] == 4) { ?>
+                                                    <span hidden><a href="<?= base_url('menu/disable/' . $id); ?>" class="btn btn-warning">Disable</a></span>
+                                                <?php } else { ?>
+                                                    <a href="<?= base_url('menu/disable/' . $id); ?>" class="btn btn-warning">Disable</a>
+                                                <?php } ?>
+                                            <?php } ?>
+                                        </td>
+                                    </tr>
+                                    <!-- <?= $i++; ?> -->
+                                <?php endforeach; ?>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th class="text-center">No</th>
+                                    <th class="text-center">Menu</th>
+                                    <th class="text-center">Icon</th>
+                                    <th class="text-center">Url</th>
+                                    <th class="text-center">Status</th>
+                                    <th class="text-center">Actions</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <!-- /.card-header -->
-        <?= $this->session->flashdata('message'); ?>
-        <div class="card-body">
-            <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th class="text-center">No</th>
-                        <th class="text-center">Menu</th>
-                        <th class="text-center">Icon</th>
-                        <th class="text-center">Url</th>
-                        <th class="text-center">Status</th>
-                        <th class="text-center">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php $i = 1; ?>
-                    <?php foreach ($menu as $m) :
-                        $id = $m['id_menu'];
-                    ?>
-                        <tr>
-                            <td class="text-center"><?= $i; ?></td>
-                            <td><?= $m['menu']; ?></td>
-                            <td class="text-center"><em class="<?= $m['icon']; ?>">&nbsp;</em></td>
-                            <td><?= $m['url']; ?></td>
-                            <?php if ($m['is_active'] == 1) { ?>
-                                <td class="text-center"> <span class="badge bg-green">active</span></td>
-                            <?php } else { ?>
-                                <td class="text-center"> <span class="badge bg-secondary">disable</span></td>
-                            <?php } ?>
-                            <td class="text-center">
-                                <button class="btn btn-info" data-toggle="modal" data-target="#modaledit<?= $m['id_menu']; ?>">Edit</button>
-                                <?php if($m['id_menu'] == 1 || $m['id_menu'] == 2 || $m['id_menu'] == 4) {?>
-                                <button class="btn btn-danger" data-toggle="modal" data-target="#modalhapus<?= $m['id_menu']; ?>" disabled>Hapus</button>
-                                <?php } else { ?>
-                                <button class="btn btn-danger" data-toggle="modal" data-target="#modalhapus<?= $m['id_menu']; ?>">Hapus</button>
-                                <?php } ?>
-                                <?php if ($m['is_active'] != 1) { ?>
-                                    <a href="<?= base_url('menu/active/' . $id); ?>" class="btn btn-success">Activate</a>
-                                <?php } else { ?>
-                                    <?php if($m['id_menu'] == 4) {?>
-                                    <span hidden><a href="<?= base_url('menu/disable/' . $id); ?>" class="btn btn-warning">Disable</a></span>
-                                    <?php } else { ?>
-                                    <a href="<?= base_url('menu/disable/' . $id); ?>" class="btn btn-warning">Disable</a>
-                                    <?php } ?>
-                                <?php } ?>
-                            </td>
-                        </tr>
-                        <?= $i++; ?>
-                    <?php endforeach; ?>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th class="text-center">No</th>
-                        <th class="text-center">Menu</th>
-                        <th class="text-center">Icon</th>
-                        <th class="text-center">Url</th>
-                        <th class="text-center">Status</th>
-                        <th class="text-center">Actions</th>
-                    </tr>
-                </tfoot>
-            </table>
         </div>
         <!-- /.card-body -->
     </div>
