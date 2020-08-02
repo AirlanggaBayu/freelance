@@ -35,9 +35,25 @@
             ?>
 
             <?php if($m['url'] != "") { ?>
+                <?php
+                    $ci = get_instance();
+                    $url = $this->uri->segment(1);
+                    if($m['menu'] == $url) :
+                ?>
                 <li class="active"><a href="<?= base_url() . $m['url']; ?>"><em class="<?= $m['icon']; ?>">&nbsp;</em> <?= $m['menu']; ?> </a></li>
+                <?php else : ?>
+                <li class=""><a href="<?= base_url() . $m['url']; ?>"><em class="<?= $m['icon']; ?>">&nbsp;</em> <?= $m['menu']; ?> </a></li>
+                <?php endif ; ?>        
             <?php } elseif($m['url'] == "") {?>
-                <li class="parent "><a data-toggle="collapse" href="#sub-<?= $i; ?>">
+                <?php
+                    $ci = get_instance();
+                    $url = $this->uri->segment(1);
+                    if($m['menu'] == $url) :
+                ?>
+                <li class="parent active"><a data-toggle="collapse" href="#sub-<?= $i; ?>">
+                <?php else : ?>
+                <li class="parent"><a data-toggle="collapse" href="#sub-<?= $i; ?>">
+                <?php endif; ?>
                     <em class="<?= $m['icon'] ?>">&nbsp;</em> <?= $m['menu'] ?> <span data-toggle="collapse" href="#sub-<?= $i; ?>" class="icon pull-right"><em class="fa fa-plus"></em></span>
                     </a>
                     <ul class="children collapse" id="sub-<?= $i; ?>">
