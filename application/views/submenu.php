@@ -28,7 +28,7 @@
                         <?= $this->session->flashdata('message'); ?>
                         <div class="row">
                             <div class="col-lg-12">
-                                <button class="btn btn-info" data-toggle="modal" data-target="#addmodal">Add Data</button>
+                                <button class="btn btn-info" data-toggle="modal" data-target="#addmodal"><em class="fa fa-plus-circle"></em>  Add Data</button>
                             </div>
                         </div>
                         <!-- /.card-header -->
@@ -37,8 +37,8 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center">No</th>
-                                        <th class="text-center">Menu</th>
                                         <th class="text-center">Submenu</th>
+                                        <th class="text-center">Menu</th>
                                         <th class="text-center">Url</th>
                                         <th class="text-center">Status</th>
                                         <th class="text-center">Actions</th>
@@ -51,8 +51,8 @@
                                     ?>
                                         <tr>
                                             <td class="text-center"><?= $i; ?></td>
-                                            <td><?= $sm['menu']; ?></td>
                                             <td><?= $sm['submenu']; ?></td>
+                                            <td><?= $sm['menu']; ?></td>
                                             <td><?= $sm['url_s']; ?></td>
                                             <?php if ($sm['is_active_s'] == 1) { ?>
                                                 <td class="text-center"> <span class="badge bg-green">active</span></td>
@@ -83,8 +83,8 @@
                                 <tfoot>
                                     <tr>
                                         <th class="text-center">No</th>
-                                        <th class="text-center">Menu</th>
                                         <th class="text-center">Submenu</th>
+                                        <th class="text-center">Menu</th>
                                         <th class="text-center">Url</th>
                                         <th class="text-center">Status</th>
                                         <th class="text-center">Actions</th>

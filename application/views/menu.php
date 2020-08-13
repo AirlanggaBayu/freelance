@@ -28,7 +28,7 @@
                         <?= $this->session->flashdata('message'); ?>
                         <div class="row">
                             <div class="col-lg-12">
-                                <button class="btn btn-info" data-toggle="modal" data-target="#addmodal">Add Data</button>
+                                <button class="btn btn-info" data-toggle="modal" data-target="#addmodal"><em class="fa fa-plus-circle"></em> Add Data</button>
                             </div>
                         </div>
                         <table id="example1" class="table table-bordered table-striped">
