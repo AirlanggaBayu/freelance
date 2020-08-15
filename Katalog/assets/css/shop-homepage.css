@@ -1,0 +1,156 @@
+/*!
+ * Start Bootstrap - Shop Homepage (https://startbootstrap.com/template-overviews/shop-homepage)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
+ */
+
+ .alamat{
+  /* margin-top: 69px; */
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 28px;
+  }
+
+  .card{
+    box-shadow: 2px 4px 3px rgba(0, 0, 0, 0.25);
+  }
+
+  .card-footer{
+    background: #FFFFFF;
+  }
+
+  .footer-copyright{
+    background-color: #000000;
+  }
+
+  
+
+  .isi{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+  }
+
+  .judul{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration-line: underline;
+    color: #626262;
+  }
+
+  .nav-item{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  .nav-link{
+    color: #000000;
+  }
+
+  .navbar-brand{
+    font-family: 'Titillium Web', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+  }
+  
+  .page-footer{
+    background: #252525;
+  }
+  
+  .stok{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    color: #c4c4c4;
+  }
+
+  .text-produk{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+  }
+ @media(min-width: 992px){
+  
+  
+  body {
+    padding-top: 56px;
+  }
+  
+  /* .carousel{
+    background-size: cover;
+    height: 640px;
+    width: auto;
+  }
+  
+  
+  .carousel-control-next, .carousel-control-prev{
+    position: center;
+  } */
+  .carousel-inner{
+    width: 100%;
+    max-height: 640px !important;
+  }
+  
+  /* .col{
+    margin: 0;
+  } */
+  
+  .gambar{
+   height: 194px;
+  }
+  
+  .info{
+    height: 199px;
+  }
+  
+  .isi{
+    font-size: 12px;
+    line-height: 14px;
+  }
+  
+  .judul{
+    font-size: 12px;
+    line-height: 14px;
+  }
+  
+  
+  nav{
+    position: absolute;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+  
+    background: #FFFFFF;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  .nav-item{
+    font-size: 24px;
+    line-height: 28px;
+    margin-right: 21px;
+  }
+  
+  
+  .navbar-brand{
+    font-size: 24px;
+    line-height: 36px;
+    top : 19px;
+  }
+  
+  .stok{
+    font-size: 12px;
+    line-height: 14px;
+  }
+  
+  .text-produk{
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+  }
+ }
+
+
