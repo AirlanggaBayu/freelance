@@ -11,7 +11,7 @@
       <div class="col-md-3 mx-auto">
 
         <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3  judul">Links</h5>
+        <h5 class="font-weight-bold text-uppercase mt-3 judul">Links</h5>
 
       </div>
       <!-- Grid column -->
