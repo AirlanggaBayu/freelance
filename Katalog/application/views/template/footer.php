@@ -26,7 +26,7 @@
 
         <ul class="list-unstyled">
           <li>
-            <a href="#!" class="text-white isi">Banyuputih, Situbondo</a>
+            <a href="#!" class="text-white isi">Ruko De Orchid No 4, Sumberkolak, Situbondo</a>
           </li>
         </ul>
 
@@ -43,41 +43,13 @@
 
         <ul class="list-unstyled">
           <li>
-            <a href="#!" class="text-white isi">Link 1</a>
-          </li>
-          <li>
-            <a href="#!" class="text-white isi">Link 2</a>
+            <a href="#!" class="text-white isi">081231944983</a>
           </li>
         </ul>
 
       </div>
       <!-- Grid column -->
 
-      <hr class="clearfix w-100 d-md-none">
-
-      <!-- Grid column -->
-      <div class="col-md-3 mx-auto">
-
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3  judul">Social Media</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!" class="text-white isi">Link 1</a>
-          </li>
-          <li>
-            <a href="#!" class="text-white isi">Link 2</a>
-          </li>
-          <li>
-            <a href="#!" class="text-white isi">Link 3</a>
-          </li>
-          <li>
-            <a href="#!" class="text-white isi">Link 4</a>
-          </li>
-        </ul>
-
-      </div>
-      <!-- Grid column -->
 
     </div>
     <!-- Grid row -->
