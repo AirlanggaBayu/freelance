@@ -7,6 +7,10 @@ class crud extends CI_Model{
         return $this->db->get($table);
     }
 
+    function detail_data($where, $table){
+        return $this->db->get_where($table, $where);
+    }
+
     #fungsi ini untuk tambah data
     function tambah_data($data, $table){
         $this->db->insert($table, $data);
