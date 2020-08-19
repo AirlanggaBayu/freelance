@@ -13,12 +13,16 @@
   line-height: 28px;
   }
 
+<<<<<<< HEAD
   .card{
     height: max-content;
     width: 70%;
     margin-left: 30px !important;
     box-shadow: 2px 4px 3px rgba(0, 0, 0, 0.25);
   }
+=======
+
+>>>>>>> eff5438912b8287bc3353828d0862deb02d5c30d
 
   .card-footer{
     background: #FFFFFF;
@@ -44,6 +48,13 @@
     color: #626262;
   }
 
+<<<<<<< HEAD
+=======
+  nav{
+    background: #FFFFFF;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+>>>>>>> eff5438912b8287bc3353828d0862deb02d5c30d
   .nav-item{
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -101,6 +112,15 @@
     position: center;
   } */
 
+<<<<<<< HEAD
+=======
+  .card{
+    margin-left: 30px !important;
+    height: max-content;
+    width: 70%;
+    box-shadow: 2px 4px 3px rgba(0, 0, 0, 0.25);
+  }
+>>>>>>> eff5438912b8287bc3353828d0862deb02d5c30d
   .card-title{
     font-size: 16px;
   }
@@ -152,8 +172,12 @@
     left: 0px;
     top: 0px;
   
+<<<<<<< HEAD
     background: #FFFFFF;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+=======
+    
+>>>>>>> eff5438912b8287bc3353828d0862deb02d5c30d
   }
   .nav-item{
     font-size: 18px;
@@ -179,4 +203,23 @@
   }
  }
 
+<<<<<<< HEAD
+=======
+ @media (max-width: 575.98px){
+  .gambar{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 50%;
+    width: 50%;
+    position: center;
+  }
+
+  .text-produk{
+    font-size: 40px;
+  }
+
+ }
+
+>>>>>>> eff5438912b8287bc3353828d0862deb02d5c30d
 

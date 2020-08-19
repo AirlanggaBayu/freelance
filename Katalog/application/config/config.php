@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 defined('BASEPATH') or exit('No direct script access allowed');
+=======
+defined('BASEPATH') OR exit('No direct script access allowed');
+>>>>>>> eff5438912b8287bc3353828d0862deb02d5c30d
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +27,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+<<<<<<< HEAD
+<<<<<<< HEAD:Katalog/application/config/config.php
 
 $config['base_url'] = 'http://localhost/freelance/Katalog';
 
@@ -30,7 +36,14 @@ $config['base_url'] = 'http://localhost/freelance/kasir';
 
 $config['base_url'] = 'http://localhost/freelance/Katalog';
 
+=======
+$config['base_url'] = 'http://localhost/freelance/kasir';
+>>>>>>> eff5438912b8287bc3353828d0862deb02d5c30d:Kasir/application/config/config.php
 
+=======
+$config['base_url'] = 'http://localhost/freelance/Katalog';
+
+>>>>>>> eff5438912b8287bc3353828d0862deb02d5c30d
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -58,7 +71,11 @@ $config['index_page'] = '';
 |
 | WARNING: If you set this to 'PATH_INFO', URIs will always be URL-decoded!
 */
+<<<<<<< HEAD
 $config['uri_protocol']    = 'REQUEST_URI';
+=======
+$config['uri_protocol']	= 'REQUEST_URI';
+>>>>>>> eff5438912b8287bc3353828d0862deb02d5c30d
 
 /*
 |--------------------------------------------------------------------------
@@ -82,7 +99,11 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
+<<<<<<< HEAD
 $config['language']    = 'english';
+=======
+$config['language']	= 'english';
+>>>>>>> eff5438912b8287bc3353828d0862deb02d5c30d
 
 /*
 |--------------------------------------------------------------------------
@@ -406,11 +427,19 @@ $config['sess_regenerate_destroy'] = FALSE;
 |       'cookie_httponly') will also affect sessions.
 |
 */
+<<<<<<< HEAD
 $config['cookie_prefix']    = '';
 $config['cookie_domain']    = '';
 $config['cookie_path']        = '/';
 $config['cookie_secure']    = FALSE;
 $config['cookie_httponly']     = FALSE;
+=======
+$config['cookie_prefix']	= '';
+$config['cookie_domain']	= '';
+$config['cookie_path']		= '/';
+$config['cookie_secure']	= FALSE;
+$config['cookie_httponly'] 	= FALSE;
+>>>>>>> eff5438912b8287bc3353828d0862deb02d5c30d
 
 /*
 |--------------------------------------------------------------------------

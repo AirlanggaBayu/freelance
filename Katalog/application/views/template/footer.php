@@ -26,7 +26,11 @@
 
         <ul class="list-unstyled">
           <li>
+<<<<<<< HEAD
             <a href="#!" class="text-white isi">Banyuputih, Situbondo</a>
+=======
+            <a href="#!" class="text-white isi">Ruko De Orchid No 4, Sumberkolak, Situbondo</a>
+>>>>>>> eff5438912b8287bc3353828d0862deb02d5c30d
           </li>
         </ul>
 
@@ -43,16 +47,21 @@
 
         <ul class="list-unstyled">
           <li>
+<<<<<<< HEAD
             <a href="#!" class="text-white isi">Link 1</a>
           </li>
           <li>
             <a href="#!" class="text-white isi">Link 2</a>
+=======
+            <a href="#!" class="text-white isi">081231944983</a>
+>>>>>>> eff5438912b8287bc3353828d0862deb02d5c30d
           </li>
         </ul>
 
       </div>
       <!-- Grid column -->
 
+<<<<<<< HEAD
       <hr class="clearfix w-100 d-md-none">
 
       <!-- Grid column -->
@@ -78,6 +87,8 @@
 
       </div>
       <!-- Grid column -->
+=======
+>>>>>>> eff5438912b8287bc3353828d0862deb02d5c30d
 
     </div>
     <!-- Grid row -->

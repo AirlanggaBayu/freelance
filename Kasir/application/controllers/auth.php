@@ -6,66 +6,37 @@ class Auth extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-
+        $this->load->model('Register_model');
         $this->load->library('form_validation');
     }
 
     public function index()
     {
+        $this->load->view('template/auth_header');
+        $this->load->view('auth/login');
+        $this->load->view('template/auth_footer');
+    }
 
-        $this->form_validation->set_rules('username', 'Username', 'trim|required');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required');
+    public function register()
+    {
+
+        $this->form_validation->set_rules('nama_adm', 'Nama', 'required|trim');
+        $this->form_validation->set_rules('pwd_adm', 'Password', 'required|trim');
+        $this->form_validation->set_rules('usnm', 'Username', 'required|trim|is_unique[admin.usnm]', [
+            'is_unique' => 'Username sudah terdaftar!'
+        ]);
+
 
         if ($this->form_validation->run() == false) {
+            $data['judul'] = 'Tambah Admin Baru';
             $this->load->view('template/auth_header');
-            $this->load->view('auth/login');
+            $this->load->view('auth/register');
             $this->load->view('template/auth_footer');
         } else {
-            $this->login();
+            $this->Register_model->register();
+            $this->session->set_flashdata('message', '<div class= "alert alert-success" role="alert">
+			Akun anda berhasil dibuat, silahkan login </div>');
+            redirect('auth/login');
         }
-    }
-    public function login()
-    {
-        $username = $this->input->post('username');
-        $password = $this->input->post('password');
-
-        $admin = $this->db->get_where('admin', ['username' => $username])->row_array();
-
-
-
-
-
-        if ($admin) {
-
-            if (md5($password) == $admin['password']) {
-                $data = [
-                    'username' => $admin['username'],
-
-
-                ];
-
-
-                $this->session->set_userdata($data);
-
-                redirect('dashboard');
-            } else {
-                $this->session->set_flashdata('message', '<div class= "alert alert-danger" role="alert">
-					Username atau Password salah</div>');
-                redirect('auth');
-            }
-        } else {
-            $this->session->set_flashdata('message', '<div class= "alert alert-danger" role="alert">
-				Username tidak terdaftar </div>');
-            redirect('auth');
-        }
-    }
-
-    public function logout()
-    {
-        $this->session->unset_userdata('username');
-
-        $this->session->set_flashdata('message', '<div class= "alert alert-success" role="alert">
-		Berhasil keluar </div>');
-        redirect('auth');
     }
 }
