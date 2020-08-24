@@ -50,10 +50,10 @@
                   foreach ($barang as $brg) {
                   ?>
                     <th scope="row"><?= $no++ ?></th>
-                    <td><?= $brg->kode ?></td>
-                    <td><?= $brg->nama_brg ?></td>
+                    <td><?= $brg->kode_barang ?></td>
+                    <td><?= $brg->nama_barang ?></td>
                     <td><?= $brg->stok ?></td>
-                    <td><?= $brg->hrg_jual ?></td>
+                    <td><?= $brg->harga ?></td>
                     <td>
                       <img src="<?= base_url('uploads/') . $brg->foto_brg ?>" width="70" height="70">
                     </td>
@@ -106,11 +106,11 @@
             <form action="<?php echo base_url('dashboard/ubah_data/' . $brg->id_brg); ?>" method="post">
               <input type="hidden" readonly value="<?= $brg->id_brg ?>" name="id_brg" class="form-control">
               <h6>Nama Barang</h6>
-              <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Masukkan Username" name="nama_brg" value="<?= $brg->nama_brg ?>">
+              <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Masukkan Username" name="nama_barang" value="<?= $brg->nama_barang ?>">
               <h6>Jumlah Stok</h6>
               <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Masukkan Nama Admin disini" name="stok" value="<?= $brg->stok ?>">
               <h6 class="mt-2">Harga Jual</h6>
-              <input type="textarea" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Masukkan alamat disini" name="hrg_jual" value="<?= $brg->hrg_jual ?>">
+              <input type="textarea" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Masukkan alamat disini" name="harga" value="<?= $brg->harga ?>">
               <h6 class="mt-2">Foto</h6>
               <input type="file" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Masukkan Foto" name="foto_brg" value="<?= $brg->foto_brg ?>">
               <h6 class="mt-2">Kategori</h6>
@@ -167,42 +167,43 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Masukkan Data Pengurus</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Masukkan Data Barang</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
         <div class="modal-body">
-          <form action="<?php echo base_url('dashboard/tambah_data'); ?>" method="post">
-            <h6 class="mt-2">Kode Barang</h6>
-            <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Masukkan Nama Barang" name="kode">
-            <h6 class="mt-2">Nama Barang</h6>
-            <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Masukkan Nama Barang" name="nama_brg">
-            <h6 class="mt-2">Alamat</h6>
-            <input type="textarea" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Masukkan Jumlah Stok" name="stok">
-            <h6 class="mt-2">No Telepon</h6>
-            <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Masukkan Harga Jual Barang" name="hrg_jual">
-            <h6 class="mt-2">Foto</h6>
-            <input type="file" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" name="foto_brg">
-            <h6 class="mt-2">Kategori</h6>
-            <div class="form-group">
-              <label>Pilih Kategori</label>
-              <select name="id_kategori" class="form-control">
-                <option>-- Pilih Kategori --</option>
-                <option value="1">Kursi</option>
-                <option value="2">Meja</option>
-                <option value="3">Lemari</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Pilih Status</label>
-              <select name="id_status" class="form-control">
-                <option>-- Pilih Status --</option>
-                <option value="1">Tersedia</option>
-                <option value="2">Akan Datang</option>
-                
-              </select>
-            </div>
+          <?php echo form_open_multipart('dashboard/tambah_data'); ?>
+
+          <h6 class="mt-2">Kode Barang</h6>
+          <input type="text" name="kode_barang" value="<?= $kode; ?>" readonly="readonly">
+          <h6 class="mt-2">Nama Barang</h6>
+          <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Masukkan Nama Barang" name="nama_barang">
+          <h6 class="mt-2">Stok Barang</h6>
+          <input type="textarea" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Masukkan Jumlah Stok" name="stok">
+          <h6 class="mt-2">Harga</h6>
+          <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Masukkan Harga Jual Barang" name="harga">
+          <h6 class="mt-2">Foto</h6>
+          <input type="file" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" name="foto_brg">
+
+          <div class="form-group">
+            <label>Pilih Kategori</label>
+            <select name="id_kategori" class="form-control">
+              <option>-- Pilih Kategori --</option>
+              <option value="1">Kursi</option>
+              <option value="2">Meja</option>
+              <option value="3">Lemari</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Pilih Status</label>
+            <select name="id_status" class="form-control">
+              <option>-- Pilih Status --</option>
+              <option value="1">Tersedia</option>
+              <option value="2">Akan Datang</option>
+
+            </select>
+          </div>
         </div>
         <div class="modal-footer">
           <button class="btn btn-danger" type="button" data-dismiss="modal">Cancel</button>
@@ -212,3 +213,4 @@
       </div>
     </div>
   </div>
+</div>

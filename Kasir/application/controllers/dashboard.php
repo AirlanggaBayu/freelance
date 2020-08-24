@@ -11,6 +11,7 @@ class dashboard extends CI_Controller
 
     public function index()
     {
+        $data['kode'] = $this->crud->kode();
         $data['barang'] = $this->crud->tampil_data('barang')->result();
         $this->load->view('template/header');
         $this->load->view('barang', $data);
@@ -74,12 +75,10 @@ class dashboard extends CI_Controller
 
     function tambah_data()
     {
-        $kode = $this->input->post('kode');
-        $nama_brg = $this->input->post('nama_brg');
+        $kode_barang = $this->input->post('kode_barang');
+        $nama_brg = $this->input->post('nama_barang');
         $stok = $this->input->post('stok');
-        $hrg_jual = $this->input->post('hrg_jual');
-        $id_kategori = $this->input->post('id_kategori');
-        $id_status = $this->input->post('id_status');
+        $hrg_jual = $this->input->post('harga');
         $foto        = $_FILES['foto_brg']['name'];
         if ($foto = '') {
         } else {
@@ -94,11 +93,13 @@ class dashboard extends CI_Controller
                 $foto = $this->upload->data('file_name');
             }
         }
+        $id_kategori = $this->input->post('id_kategori');
+        $id_status = $this->input->post('id_status');
         $data = array(
-            'kode' => $kode,
-            'nama_brg' => $nama_brg,
+            'kode_barang' => $kode_barang,
+            'nama_barang' => $nama_brg,
             'stok' => $stok,
-            'hrg_jual' => $hrg_jual,
+            'harga' => $hrg_jual,
             'foto_brg' => $foto,
             'id_kategori' => $id_kategori,
             'id_status' => $id_status
@@ -106,5 +107,28 @@ class dashboard extends CI_Controller
         $this->crud->tambah_data($data, 'barang');
 
         redirect('dashboard/index');
+    }
+
+    public function inputbarang()
+    {
+        if ($_POST) {
+            $barang = $this->input->post('namaBarang');
+            $kodebarang = $this->input->post('kodeBarang');
+            $stok = $this->input->post('stokBarang');
+            $harga = $this->input->post('harga');
+            $idkategori = $this->input->post('idKategori');
+            $idstatus = $this->input->post('idStatus');
+
+            $this->crus->inputBarang(array(
+                'nama_barang'         => $barang,
+                'kode_barang'        => $kodebarang,
+                'stok'        => $stok,
+                'harga'        => $harga,
+                'id_kategori'        => $idkategori,
+                'id_status'        => $idstatus
+
+            ));
+        }
+        redirect("dashboard");
     }
 }
